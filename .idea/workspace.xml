@@ -96,30 +96,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hot.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hot.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/hot.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="399">
+              <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
               <folding>
-                <marker date="1489075080000" expanded="true" signature="621:1094" ph="{...}" />
-                <marker date="1489075080000" expanded="true" signature="633:684" ph="{...}" />
-                <marker date="1489075080000" expanded="true" signature="648:678" ph="{...}" />
-                <marker date="1489075080000" expanded="true" signature="702:734" ph="{&quot;v-header&quot;: header...}" />
-                <marker date="1489075080000" expanded="true" signature="761:1089" ph="{...}" />
-                <marker date="1489075080000" expanded="true" signature="867:1002" ph="{...}" />
-                <marker date="1489075080000" expanded="true" signature="1039:1082" ph="{...}" />
-                <marker date="1489075080000" expanded="true" signature="1090:1094" ph="{...}" />
+                <marker date="1489076073000" expanded="true" signature="621:1033" ph="{...}" />
+                <marker date="1489076073000" expanded="true" signature="633:684" ph="{...}" />
+                <marker date="1489076073000" expanded="true" signature="648:678" ph="{...}" />
+                <marker date="1489076073000" expanded="true" signature="702:734" ph="{&quot;v-header&quot;: header...}" />
+                <marker date="1489076073000" expanded="true" signature="761:1028" ph="{...}" />
+                <marker date="1489076073000" expanded="true" signature="867:973" ph="{...}" />
+                <marker date="1489076073000" expanded="true" signature="1010:1021" ph="{...}" />
+                <marker date="1489076073000" expanded="true" signature="1029:1033" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="266">
+              <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -179,8 +179,8 @@
         <option value="$PROJECT_DIR$/src/router/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/src/components/hot.vue" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/components/hot.vue" />
       </list>
     </option>
   </component>
@@ -437,12 +437,12 @@
       <workItem from="1488974631070" duration="5970000" />
       <workItem from="1489022660260" duration="1423000" />
       <workItem from="1489028940607" duration="5915000" />
-      <workItem from="1489045664884" duration="9597000" />
+      <workItem from="1489045664884" duration="9896000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24498000" />
+    <option name="totallyTimeSpent" value="24797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1440" height="809" extended-state="6" />
@@ -803,25 +803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Hello.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/coming.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <marker date="1489051862000" expanded="true" signature="193:245" ph="{...}" />
-            <marker date="1489051862000" expanded="true" signature="210:241" ph="{&quot;v-header&quot;: header...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/home.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -892,28 +873,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/hot.vue">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="266">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/coming.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
           <folding>
-            <marker date="1489075080000" expanded="true" signature="621:1094" ph="{...}" />
-            <marker date="1489075080000" expanded="true" signature="633:684" ph="{...}" />
-            <marker date="1489075080000" expanded="true" signature="648:678" ph="{...}" />
-            <marker date="1489075080000" expanded="true" signature="702:734" ph="{&quot;v-header&quot;: header...}" />
-            <marker date="1489075080000" expanded="true" signature="761:1089" ph="{...}" />
-            <marker date="1489075080000" expanded="true" signature="867:1002" ph="{...}" />
-            <marker date="1489075080000" expanded="true" signature="1039:1082" ph="{...}" />
-            <marker date="1489075080000" expanded="true" signature="1090:1094" ph="{...}" />
+            <marker date="1489051862000" expanded="true" signature="193:245" ph="{...}" />
+            <marker date="1489051862000" expanded="true" signature="210:241" ph="{&quot;v-header&quot;: header...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/src/components/Hello.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="114">
+          <caret line="20" column="11" lean-forward="false" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/hot.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding>
+            <marker date="1489076073000" expanded="true" signature="621:1033" ph="{...}" />
+            <marker date="1489076073000" expanded="true" signature="633:684" ph="{...}" />
+            <marker date="1489076073000" expanded="true" signature="648:678" ph="{...}" />
+            <marker date="1489076073000" expanded="true" signature="702:734" ph="{&quot;v-header&quot;: header...}" />
+            <marker date="1489076073000" expanded="true" signature="761:1028" ph="{...}" />
+            <marker date="1489076073000" expanded="true" signature="867:973" ph="{...}" />
+            <marker date="1489076073000" expanded="true" signature="1010:1021" ph="{...}" />
+            <marker date="1489076073000" expanded="true" signature="1029:1033" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

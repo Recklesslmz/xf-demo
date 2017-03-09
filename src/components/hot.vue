@@ -33,10 +33,8 @@
         .then(function (response) {
           const list = JSON.parse(response.bodyText);
           this.subjects = list.subjects;
-          console.log(list);
         })
         .catch(function (response) {
-          console.log(response)
         })
     },
   }
