@@ -96,7 +96,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hot.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hot.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/hot.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
@@ -115,6 +115,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="coming.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/coming.vue">
           <provider selected="true" editor-type-id="text-editor">
@@ -124,16 +134,6 @@
                 <marker date="1489051862000" expanded="true" signature="193:245" ph="{...}" />
                 <marker date="1489051862000" expanded="true" signature="210:241" ph="{&quot;v-header&quot;: header...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -180,6 +180,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/components/hot.vue" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -436,12 +437,12 @@
       <workItem from="1488974631070" duration="5970000" />
       <workItem from="1489022660260" duration="1423000" />
       <workItem from="1489028940607" duration="5915000" />
-      <workItem from="1489045664884" duration="9142000" />
+      <workItem from="1489045664884" duration="9597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24043000" />
+    <option name="totallyTimeSpent" value="24498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1440" height="809" extended-state="6" />
@@ -477,14 +478,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/header.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
@@ -913,6 +906,14 @@
             <marker date="1489075080000" expanded="true" signature="1039:1082" ph="{...}" />
             <marker date="1489075080000" expanded="true" signature="1090:1094" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

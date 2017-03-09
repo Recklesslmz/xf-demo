@@ -2,6 +2,8 @@
 
 > first vue project
 
+第一练手的项目，欢迎各位大大指导一下~
+
 ## Build Setup
 
 ``` bash
