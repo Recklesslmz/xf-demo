@@ -5,6 +5,7 @@ import Register from '../page/register'
 import Home from '../page/home'
 import Hot from '../components/hot'
 import Coming from '../components/coming'
+import movieDetail from '../components/movieDetail'
 
 
 Vue.use(Router)
@@ -30,6 +31,11 @@ export default new Router({
       path: '/Coming',
       name: 'coming',
       component: Coming
+    },
+    {
+      path: '/Hot/movieDetail/:id',
+      name: 'movieDetail',
+      component: movieDetail
     },
   ]
 })

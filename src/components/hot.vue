@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-header></v-header>
-    <div class="hot-content" v-for="item in subjects">
+    <div class="hot-content" @click="choose(item,index)" v-for="(item,index) in subjects">
       <div class="currentImg">
         <img :src="item.images.small">
       </div>
@@ -37,6 +37,12 @@
         .catch(function (response) {
         })
     },
+    methods:{
+      choose(item,index){
+        const path = '/Hot/movieDetail/' + item.id
+        this.$router.push({path:path})
+      }
+    }
   }
 </script>
 <style lang="scss">
