@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header class='title-bg' :title="dataMsg.title">
-      <mt-button icon="back" slot="left"></mt-button>
+      <mt-button icon="back" @click='back' slot="left"></mt-button>
     </mt-header>
 
     <div class="detail-top-content">
@@ -33,18 +33,25 @@
         </div>
       </div>
     </div>
-
+    <v-spinner v-if='guodu'></v-spinner>
   </div>
+
 </template>
 
 <script type="text/ecmascript-6">
+ import spinner from '../components/spinner.vue'
   export default {
     data(){
       return {
-        dataMsg: ''
+        dataMsg: '',
+        guodu:true
       }
     },
+    components:{
+      'v-spinner':spinner
+    },
     created(){
+      this.guodu = false;
       const url = 'https://api.douban.com/v2/movie/subject/' + this.$route.params.id + '?apikey=0b2bdeda43b5688921839c8ecb20399b&city=%E5%8C%97%E4%BA%AC&client=something&udid=dddddddddddddddddddddd'
       this.$http.jsonp(url)
         .then(function (response) {
@@ -54,7 +61,11 @@
         .catch(function (response) {
         })
     },
-    methods: {}
+    methods: {
+      back(){
+        this.$router.push({path:'/Hot'})
+      }
+    }
   }
 
 </script>

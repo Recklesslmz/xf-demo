@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-header></v-header>
-    <div class="hot-content" @click="choose(item,index)" v-for="(item,index) in subjects">
+    <div v-if='!anFlag' class="hot-content" @click="choose(item,index)" v-for="(item,index) in subjects">
       <div class="currentImg">
         <img :src="item.images.small">
       </div>
@@ -12,25 +12,34 @@
       </div>
 
     </div>
-
-    <!--<div>这是热映界面</div>-->
+    <div class="spinner-location">
+      <v-spinner  v-if='anFlag'></v-spinner>
+    </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import header from '../components/header.vue'
+  import spinner from '../components/spinner.vue'
   export default {
     data(){
       return {
-        subjects: []
+        subjects: [],
+        anFlag:true
       }
     },
     components: {
-      'v-header': header
+      'v-header': header,
+      'v-spinner':spinner
     },
     created: function () {
+
+    },
+    mounted(){
+
       this.$http.jsonp('https://api.douban.com/v2/movie/in_theaters')
         .then(function (response) {
+          this.anFlag = false;
           const list = JSON.parse(response.bodyText);
           this.subjects = list.subjects;
         })
@@ -64,7 +73,7 @@
       float: left;
       width: 67%;
       margin: {
-        left: .7rem;
+        left: 1rem;
       }
     ;
       .name {
@@ -113,5 +122,10 @@
       }
     }
   }
+.spinner-location{
 
+  position: absolute;
+  top:40%;
+  left:35%;
+}
 </style>
