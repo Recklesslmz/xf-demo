@@ -7,14 +7,15 @@
       <mt-button slot="right">注册</mt-button>
     </mt-header>
     <div class="tab">
-      <div @click="amount" :class='styleObj' class="password">账号密码登录</div>
-      <div @click="mobile" :class='styleObj2' class="phone">手机号码快捷登录</div>
+      <div @click="getAmount" :class='styleObj' class="password">账号密码登录</div>
+      <div @click="getMobile" :class='styleObj2' class="phone">手机号码快捷登录</div>
     </div>
     <div>
       <div class="acountLogin" v-if='styleObj.isActive'>
-        <mt-field label="账号" placeholder="请输入手机号码" type='tel'></mt-field>
-        <mt-field label="密码" placeholder="请输入密码" type="password"></mt-field>
-        <mt-button class='resister-btn' type="danger">注册</mt-button>
+        <mt-field v-model='mobile' label="账号" placeholder="请输入手机号码" type='tel'></mt-field>
+        <mt-field v-model='password' label="密码" placeholder="请输入密码" type="password"></mt-field>
+        <mt-button class='resister-btn' type="danger" @click='submit'>注册</mt-button>
+        <div class="register-ques">遇到问题？</div>
       </div>
       <div v-if='!styleObj.isActive'>手机号码快捷登录</div>
     </div>
@@ -34,14 +35,27 @@
           isActive: false,
           isNotActive: true
         },
-        test:1
+        mobile:'',
+        password:'',
       }
     },
     methods: {
       submit(){
-        this.$router.replace('/home')
+        this.$http.get('/api/Register').then(response => {
+          const dataMobile = response.data.data.mobile;
+          const password = response.data.data.password;
+          if(this.mobile != dataMobile || this.password != password){
+            alert('用户信息不正确，请重新填写')
+          }else if(this.mobile === dataMobile || this.password === password){
+            this.$router.replace('/home')
+          }
+        }).then(blob => {
+
+        });
+
       },
-      amount(){
+
+      getAmount(){
         this.styleObj2 = {
           isActive: false,
           isNotActive: true
@@ -51,7 +65,7 @@
           isNotActive: false
         }
       },
-      mobile(){
+      getMobile(){
         this.styleObj2 = {
           isActive: true,
           isNotActive: false
@@ -91,6 +105,17 @@
         width:90%;
         margin: {
           left:5%;
+          top:2rem;
+        };
+      }
+      .register-ques{
+        text-align: center;
+        margin:{
+          top:1rem;
+        };
+        color: #cccccc;
+        font: {
+          weight: 300;
         };
       }
     }
@@ -99,7 +124,7 @@
   .register-btn {
     width: 10rem;
     margin: {
-      top: 1rem;
+      top: 2rem;
     }
   ;
   }
