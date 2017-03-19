@@ -2,6 +2,7 @@
   <div class="home_top">
     <router-link class='hot' to='/Hot'>正在热映</router-link>
     <router-link class='soon' to='/Coming'>即将上映</router-link>
+    <div style="color:red;">{{names}}</div>
     <!--<div style="color:black;">正在热映</div>-->
     <!--<div class="soon">即将上映</div>-->
   </div>
@@ -10,6 +11,9 @@
 <script type="text/ecmascript-6">
 
   export default {
+    props: {
+     names:String
+    },
     data(){
       return{
         message:'首页',

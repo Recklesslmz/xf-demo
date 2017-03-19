@@ -1,144 +1,163 @@
 <template>
-  <div class="register">
-    <mt-header title="登录">
-      <div slot="left">
-        <mt-button icon="back">返回</mt-button>
-      </div>
-      <mt-button slot="right">注册</mt-button>
-    </mt-header>
-    <div class="tab">
-      <div @click="getAmount" :class='styleObj' class="password">账号密码登录</div>
-      <div @click="getMobile" :class='styleObj2' class="phone">手机号码快捷登录</div>
+  <div>
+    <v-top :headerProps='headerProps'></v-top>
+    <div class="logo">
+      <img src="../assets/img/logo.png">
     </div>
-    <div>
-      <div class="acountLogin" v-if='styleObj.isActive'>
-        <mt-field v-model='mobile' label="账号" placeholder="请输入手机号码" type='tel'></mt-field>
-        <mt-field v-model='password' label="密码" placeholder="请输入密码" type="password"></mt-field>
-        <mt-button class='resister-btn' type="danger" @click='submit'>注册</mt-button>
-        <div class="register-ques">遇到问题？</div>
-      </div>
-      <div v-if='!styleObj.isActive'>手机号码快捷登录</div>
+    <div class="register-input">
+      <input type="tel" v-model='headerProps.Phone' placeholder="请输入手机号码">
+      <img src="../assets/img/mobile.png">
+    </div>
+    <div class="register-input">
+      <input type="number" v-model="headerProps.Code" placeholder="请输入验证码">
+      <img src="../assets/img/code.png">
+    </div>
+    <div class="register-code">
+      <v-time :headerProps='headerProps'></v-time>
+      <!--<button id="btn">获取验证码</button>-->
+    </div>
+
+    <div class="register-btn">
+
+      <button @click="submitRegister">立即注册</button>
     </div>
   </div>
 </template>
-
 <script type="text/ecmascript-6">
-  // import header from '../components/header'
+  import top from '../components/top.vue'
+  import time from '../components/countDown.vue'
+  import {getCommon} from '../common/common.js'
   export default {
-    data() {
+    data(){
       return {
-        styleObj: {
-          isActive: true,
-          isNotActive: false
+        headerProps: {
+          name: '注册',
+          backShow: false,
+          Phone: '',
+          Code: '',
+          commonUrl: getCommon().commonUrl,
+          openId: getCommon().openId,
+          partnerId: getCommon().partnerId
         },
-        styleObj2: {
-          isActive: false,
-          isNotActive: true
-        },
-        mobile:'',
-        password:'',
+
       }
     },
     methods: {
-      submit(){
-        this.$http.get('/api/Register').then(response => {
-          const dataMobile = response.data.data.mobile;
-          const password = response.data.data.password;
-          if(this.mobile != dataMobile || this.password != password){
-            alert('用户信息不正确，请重新填写')
-          }else if(this.mobile === dataMobile || this.password === password){
-            this.$router.replace('/home')
-          }
-        }).then(blob => {
+      submitRegister(){
+        _this = this;
+        this.$http.post(_this.commonUrl + '"/service/restful/member2?op=save"', {
+          'partnerId': _this.headerProps.partnerId,
+          'openId': _this.headerProps.openId,
+          'mobile': _this.headerProps.Phone,
+          mobileCode: _this.headerProps.Code
+        }).then(response => {
+          console.log(1)
+
+        }, response => {
 
         });
-
-      },
-
-      getAmount(){
-        this.styleObj2 = {
-          isActive: false,
-          isNotActive: true
-        }
-        this.styleObj = {
-          isActive: true,
-          isNotActive: false
-        }
-      },
-      getMobile(){
-        this.styleObj2 = {
-          isActive: true,
-          isNotActive: false
-        }
-        this.styleObj = {
-          isActive: false,
-          isNotActive: true
-        }
       }
     },
-    components: {}
+    watch:{
+
+    },
+    components: {
+      'v-time': time,
+      'v-top': top
+    }
   }
 
 
 </script>
 <style lang="scss">
-  .register {
-    .mint-header {
-      background-color: #ff0000;
+  .logo {
+    text-align: center;
+    margin: {
+      top: 1.2rem;
     }
-    .tab {
-      display: flex;
-      text-align: center;
-      height: 3rem;
-      color: gray;
-      border: {
-        bottom: 1px solid #EAEAEA;
-      }
-    ;
-      div {
-        flex: 1;
-        line-height: 3rem;
-      }
-    }
-    .acountLogin{
-      .resister-btn{
-        width:90%;
-        margin: {
-          left:5%;
-          top:2rem;
-        };
-      }
-      .register-ques{
-        text-align: center;
-        margin:{
-          top:1rem;
-        };
-        color: #cccccc;
-        font: {
-          weight: 300;
-        };
-      }
+  ;
+    img {
+      width: 40%;
     }
   }
 
   .register-btn {
-    width: 10rem;
-    margin: {
-      top: 2rem;
+    width: 90%;
+    height: 2.5rem;
+
+    text-align: center;
+    line-height: 2rem;
+    margin-top: 2rem;
+    margin-left: 5%;
+
+    button {
+      color: white;
+      width: 100%;
+      border: none;
+      background: #00a341;
+      font-size: .8rem;
+      height: 2.5rem;
+      border: {
+        radius: .2rem;
+      }
     }
-  ;
   }
 
-  .isActive {
-    border: {
-      bottom: 2px solid #ff0000;
+  .register-input {
+    margin-top: 1rem;
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    input::-webkit-input-placeholder {
+      position: relative;
+      left: 1rem;
+      font: {
+        weight: 100;
+      }
+    ;
     }
-  ;
-    color: red;
+
+    input {
+      padding-left: 15%;
+      width: 85%;
+      height: 2.5rem;
+      border: none;
+      border: {
+        radius: .2rem
+      }
+      font: {
+        size: 1rem;
+      }
+    ;
+      -webkit-box-shadow: 0 0 8px #aaa;
+      box-shadow: 0 0 8px #aaa;
+      -webkit-appearance: none;
+    }
+    img {
+      width: 12%;
+      position: absolute;
+      top: .56rem;
+      left: .5rem;
+
+    }
   }
 
-  .isNotActive {
-    color: gray;
-    border-bottom: none;
+  .register-code {
+    float: right;
+    position: relative;
+    top: -2rem;
+    left: -1.5rem;
+    button {
+      border: none;
+      font-size: .6rem;
+      background: #00a341;
+      color: white;
+      height: 1.5rem;
+      line-height: 1rem;
+      border: {
+        radius: .2rem;
+      }
+
+    }
   }
 </style>

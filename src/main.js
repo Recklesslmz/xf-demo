@@ -9,6 +9,7 @@ import vueResource from 'vue-resource'
 
 Vue.use(MintUI);
 Vue.use(vueResource);
+
 Vue.config.productionTip = false
 // eslint-disable no-new
 new Vue({
