@@ -1,57 +1,117 @@
 <template>
   <div>
-    <v-top :headerProps='headerProps'></v-top>
-    <v-time></v-time>
+    <div class="goods">
+      <div class="menu-wrapper">
+        <ul>
+          <li v-for='item in goods' class="menu-item">
+          <span class="text">
+            {{item.name}}
+          </span>
+          </li>
+        </ul>
+
+      </div>
+      <div class="foods-wrapper">
+        <ul>
+          <li v-for='item in goods' class="food-list">
+            <h1 class="title">{{item.name}}</h1>
+            <ul>
+              <li v-for='food in item.foods' class="food-item">
+                <div class="icon">
+                  <img :src='food.icon'>
+                </div>
+                <div class="content">
+                  <h2 class="name">{{food.name}}</h2>
+                  <p class="desc">{{food.description}}</p>
+                  <div class="extera">
+                    <span>月售{{food.sellCount}}份</span>
+                    <span>好评率{{food.rating}}%</span>
+                  </div>
+                  <div class="price">
+                    <span>￥{{food.price}}</span>
+                    <span>￥{{food.price}}</span>
+                  </div>
+                </div>
+
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 <script type="text/ecmascript-6">
-  import top from  '../components/top.vue'
-  import {getCommon} from '../common/common.js'
-  import time from '../components/countDown.vue'
   export default {
     data(){
       return {
-        headerProps: {
-          name: '首页',
-          backShow: false
-        },
-        commonUrl:getCommon().commonUrl,
-        openId:getCommon().openId,
-        partnerId:getCommon().partnerId
+        goods: {}
       }
     },
-    mounted(){
-      this.getMemberInfo();
+    created(){
 
     },
-    methods:{
-      getMemberInfo(){
-        // this.$http.post('/someUrl', {foo: 'bar'}).then(response => {
-        //
-        // }, response => {
-        //
-        // });
-      },
+    mounted(){
+      this.getMenu();
     },
-    components: {
-      'v-top': top,
-      'v-time':time
+    methods: {
+      getMenu(){
+        this.$http.get('/api/goods').then((response) => {
+          response = response.body;
+          if (response.errno === 0) {
+            this.goods = response.data;
+            console.log(this.goods);
+            this.$nextTick(() => {
+            });
+          }
+        });
+      },
+      test(){
+
+      }
+
     }
   }
+
 
 </script>
 <style lang="scss">
-  .home_top {
+  .goods{
+    display: flex;
+    position: absolute;
+    top: 174px;
+    bottom: 46px;
     width: 100%;
-    height: 2.5rem;
-    background: #ff0000;
-    text-align: center;
-    div {
-      color: white;
-      width: 50%;
-      float: left;
-      line-height: 2.5rem;
+    overflow: hidden;
+    .menu-wrapper {
+      flex: 0 0 80px;
+      width: 80px;
+      background: #f3f5f7;
+      .menu-item {
+        padding: {
+          left: 12px;
+        }
+      ;
+        display: table;
+        height: 54px;
+        width: 56px;
+        line-height: 14px;
+
+        .text {
+          font: {
+            size: 14px;
+          }
+          display: table-cell;
+          width: 56px;
+          vertical-align: middle;
+          border: {
+            bottom: 1px solid #dcdcdc;
+          }
+        ;
+        }
+      }
     }
   }
+
 
 </style>

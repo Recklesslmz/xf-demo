@@ -8,6 +8,9 @@ import Coming from '../components/coming'
 import movieDetail from '../components/movieDetail'
 import acountLogin from '../components/acountLogin'
 import mobileLogin from '../components/mobileLogin'
+import homeCart from '../page/homeCart'
+import map from '../page/map'
+import mapGaode from '../page/mapGaode.vue'
 
 
 Vue.use(Router)
@@ -48,6 +51,21 @@ export default new Router({
       path: '/Hot/movieDetail/:id',
       name: 'movieDetail',
       component: movieDetail
+    },
+    {
+      path: '/homeCart',
+      name: 'homeCart',
+      component: homeCart
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: map
+    },
+    {
+      path: '/mapGaode',
+      name: 'mapGaode',
+      component: mapGaode
     },
   ]
 })

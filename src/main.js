@@ -7,6 +7,7 @@ import App from './App'
 import router from './router'
 import vueResource from 'vue-resource'
 
+
 Vue.use(MintUI);
 Vue.use(vueResource);
 

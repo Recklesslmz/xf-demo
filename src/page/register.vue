@@ -13,7 +13,7 @@
       <img src="../assets/img/code.png">
     </div>
     <div class="register-code">
-      <v-time :headerProps='headerProps'></v-time>
+      <v-time class='cut-down' :headerProps='headerProps'></v-time>
       <!--<button id="btn">获取验证码</button>-->
     </div>
 
@@ -42,25 +42,17 @@
 
       }
     },
+    mounted(){
+    },
     methods: {
       submitRegister(){
-        _this = this;
-        this.$http.post(_this.commonUrl + '"/service/restful/member2?op=save"', {
-          'partnerId': _this.headerProps.partnerId,
-          'openId': _this.headerProps.openId,
-          'mobile': _this.headerProps.Phone,
-          mobileCode: _this.headerProps.Code
-        }).then(response => {
-          console.log(1)
+        this.$router.push({path: '/'})
+      },
+      autoLocation(){
 
-        }, response => {
-
-        });
       }
     },
-    watch:{
-
-    },
+    watch: {},
     components: {
       'v-time': time,
       'v-top': top
@@ -120,7 +112,7 @@
     input {
       padding-left: 15%;
       width: 85%;
-      height: 2.5rem;
+      height: 3.2rem;
       border: none;
       border: {
         radius: .2rem
@@ -147,6 +139,10 @@
     position: relative;
     top: -2rem;
     left: -1.5rem;
+    .cut-down {
+      position: relative;
+      top: -.1rem;
+    }
     button {
       border: none;
       font-size: .6rem;
