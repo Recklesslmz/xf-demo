@@ -1,10 +1,6 @@
 # xf-demo
 
-> first vue project
-
-第一练手的项目，欢迎各位大大指导一下~
-
-项目还在持续更新！
+> 乱七八糟的东西，请忽略
 
 ## Build Setup
 

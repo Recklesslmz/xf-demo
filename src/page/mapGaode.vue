@@ -29,7 +29,7 @@
             console.log(result)
           });
         });
-        AMapUI.loadUI(['misc/PoiPicker'], function(PoiPicker) {
+        AMapUI.loadUI(['misc/PoiPicker'], function (PoiPicker) {
 
           var poiPicker = new PoiPicker({
             input: 'searchInput',
@@ -40,7 +40,7 @@
             searchResultsContainer: 'searchResults'
           });
 
-          poiPicker.on('poiPicked', function(poiResult) {
+          poiPicker.on('poiPicked', function (poiResult) {
             console.log(1)
 
             poiPicker.hideSearchResults();
@@ -59,7 +59,7 @@
             }
           });
 
-          poiPicker.onCityReady(function() {
+          poiPicker.onCityReady(function () {
             poiPicker.searchByKeyword('美食');
           });
         });
