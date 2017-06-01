@@ -11,6 +11,8 @@ import mobileLogin from '../components/mobileLogin'
 import homeCart from '../page/homeCart'
 import map from '../page/map'
 import mapGaode from '../page/mapGaode.vue'
+import mapClick from '../page/mapClick'
+import mapLocation from '../page/mapLocation.vue'
 
 
 Vue.use(Router)
@@ -18,7 +20,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: Home
     },
@@ -58,7 +60,7 @@ export default new Router({
       component: homeCart
     },
     {
-      path: '/map',
+      path: '/',
       name: 'map',
       component: map
     },
@@ -66,6 +68,16 @@ export default new Router({
       path: '/mapGaode',
       name: 'mapGaode',
       component: mapGaode
+    },
+    {
+      path: '/mapClick',
+      name: 'mapClick',
+      component: mapClick
+    },
+    {
+      path: '/mapLocation',
+      name: 'mapLocation',
+      component: mapLocation
     },
   ]
 })

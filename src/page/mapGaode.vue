@@ -1,6 +1,7 @@
 <template>
   <div>
     <div id="mapContainer"></div>
+    <div>limuzi</div>
   </div>
 
 </template>
@@ -9,6 +10,7 @@
   export default{
     mounted(){
       this.getMap()
+      this.geocoder()
     },
     methods: {
       getMap(){
@@ -19,51 +21,38 @@
           var placeSearch = new AMap.PlaceSearch({ //构造地点查询类
             pageSize: 3500,
             pageIndex: 1,
-            city: "建邺区", //城市
+            city: "东莞", //城市
             map: map//,
             //panel: "panel"
           });
           //关键字查询
           console.log(placeSearch)
-          placeSearch.search('麦当劳', function (status, result) {
+          placeSearch.search('肯德基', function (status, result) {
+            console.log(result)
+          });
+          map.on('hotspotclick',function(result) {
             console.log(result)
           });
         });
-        AMapUI.loadUI(['misc/PoiPicker'], function (PoiPicker) {
 
-          var poiPicker = new PoiPicker({
-            input: 'searchInput',
-            placeSearchOptions: {
-              map: map,
-              pageSize: 10
-            },
-            searchResultsContainer: 'searchResults'
-          });
-
-          poiPicker.on('poiPicked', function (poiResult) {
-            console.log(1)
-
-            poiPicker.hideSearchResults();
-
-            var source = poiResult.source,
-              poi = poiResult.item;
-
-            if (source !== 'search') {
-
-              //suggest来源的，同样调用搜索
-              poiPicker.searchByKeyword(poi.name);
-
-            } else {
-
-              //console.log(poi);
-            }
-          });
-
-          poiPicker.onCityReady(function () {
-            poiPicker.searchByKeyword('美食');
-          });
+      },
+      geocoder(){
+        let _this = this
+        var geocoder = new AMap.Geocoder({
+          city: "东莞", //城市，默认：“全国”
+          radius: 1000 //范围，默认：500
         });
-      }
+        //地理编码,返回地理编码结果
+        geocoder.getLocation("东莞", function (status, result) {
+          console.log(result)
+          if (status === 'complete' && result.info === 'OK') {
+            _this.geocoder_CallBack(result);
+          }
+        });
+      },
+      geocoder_CallBack(data){
+        console.log(data)
+      },
     }
   }
 
